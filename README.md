@@ -11,3 +11,5 @@ git push
 ### Pull from the cloud 
 git fetch 
 git pull
+
+##Bruh moment Edit
