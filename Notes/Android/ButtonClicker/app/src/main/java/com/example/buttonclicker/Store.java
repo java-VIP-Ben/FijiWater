@@ -11,9 +11,9 @@ public class Store extends AppCompatActivity {
 
     //creating usable buttons
 
-    private Button Milk;
-    private Button Exit;
-    private Button Home;
+    private Button milk;
+    private Button exit;
+    private Button home;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +21,11 @@ public class Store extends AppCompatActivity {
         setContentView(R.layout.activity_store);
 
 
-        Home.setOnClickListener(new View.OnClickListener() {
+        exit = findViewById(R.id.btnMenu);
+        home = findViewById(R.id.btnBack);
+        milk = findViewById(R.id.btnMilk);
+
+        home.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent i = new Intent(Store.this, home.class);
@@ -29,12 +33,12 @@ public class Store extends AppCompatActivity {
             }
         });
 
-        Exit.setOnClickListener(new View.OnClickListener() {
+        exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent()
+                Intent i = new Intent(Store.this, MainActivity.class);
+                startActivity(i);
             }
-        })
-
+        });
     }
 }

@@ -35,14 +35,16 @@ public class home extends AppCompatActivity {
         explore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(home.this, Explore.class);
+                startActivity(i);
             }
         });
 
         sleep.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                Intent i = new Intent(home.this, Sleep.class);
+                startActivity(i);
             }
         });
 
