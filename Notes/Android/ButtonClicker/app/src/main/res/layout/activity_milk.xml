@@ -4,4 +4,79 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Milk"/>
+    android:background="@color/black"
+    tools:context=".Milk">
+
+    <LinearLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="7dp"
+            android:text=" Milk is in the diary section."
+            android:textColor="#800000"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:text="It will not make you happier"
+            android:textAlignment="center"
+            android:textColor="#601010"
+            android:textSize="18dp" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="460dp"
+            app:srcCompat="@drawable/monsterguy" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="186dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/btnGetMilk"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:padding="10dp"
+                    android:text="Buy a bag of milk inside a bag of milk inside a bag of milk inside a bag of milk inside a bag of milk outside a bag of milk inside a outside of a bag of bag of milk in a bag in outside a milk bag bag milk milk milk milk milk milk"
+                    android:textColor="#957900"
+                    android:textSize="14dp" />
+
+                <Button
+                    android:id="@+id/btnOutside"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:backgroundTint="@android:color/transparent"
+                    android:padding="10dp"
+                    android:text="Go back outside"
+                    android:textColor="#800000"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

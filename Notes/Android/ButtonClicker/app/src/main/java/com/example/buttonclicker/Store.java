@@ -40,5 +40,13 @@ public class Store extends AppCompatActivity {
                 startActivity(i);
             }
         });
+
+        milk.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i = new Intent(Store.this, Milk.class);
+                startActivity(i);
+            }
+        });
     }
 }
