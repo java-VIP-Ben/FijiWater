@@ -5,5 +5,7 @@ public class BufferTester {
 
         //Read in the file 
         System.out.println(BufferWriter.readString());
+
+        
     }
 }
