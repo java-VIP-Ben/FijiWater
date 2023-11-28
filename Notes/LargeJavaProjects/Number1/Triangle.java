@@ -1,6 +1,11 @@
-public class Triangle extends GeometricObject{
-    public static void main(String[] args) {
-        
+public abstract class Triangle extends GeometricObject{
+
+    public Triangle() {
+        super("white",false);
+    }
+
+    public Triangle(String color, boolean filled) {
+        super(color, filled);
     }
 
     @Override

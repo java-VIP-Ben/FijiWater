@@ -5,6 +5,7 @@ public abstract class GeometricObject {
 
   /**Default construct*/
   protected GeometricObject() {
+    
   }
 
   /**Construct a geometric object*/
