@@ -3,6 +3,7 @@ import java.util.Scanner;
 import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileWriter;
+import java.io.PrintWriter;
 
 public class PasswordManager {
 
@@ -11,165 +12,110 @@ public class PasswordManager {
     
     String accName;
     String category;
+    static String uLog, pLog, YN, rName, uName, pWord, sInfo, userInput, userChoice;
 
     
 
 
     public static void main(String[] args) {
-
-        //Main variables 
-        String userInput;
-        String userChoice;
-
-        //starting a scanner 
-        Scanner ui = new Scanner(System.in);
-        
-        System.out.println("Would you like to use Password Manager? (Y/N)");
-        userInput = ui.nextLine();
-        if(userInput.equals("y") || userInput.equals("Y") || userInput.equals("yes")) {
-            while(!userInput.equals("3")) {
-                System.out.print("\t|~~~Password Manager~~~| \t \t \n ---------------Login or Signup--------------- \n 1.) Login \n 2.) Sign up \n 3.) Exit \n --------------------------------------------- \n");
-                System.out.println("What would you like to do?");
-                userInput = ui.nextLine();
-                if (ui.equals("1")) {
-                   
-                }
-                if (ui.equals("2")) {
-                   Register();
-                } else {
-                    break;
-                }
-            }
-        } else {
-            System.out.println("Goodbye!");
-        }
-        
-
-        //closing the UI (jonah keeps messing this up lmao)
-        ui.close();
+        //starting the program at the main menu
+        Menu();
     }
 
-    //signing up the user (creating the users account that saves) <- done by ben
+    public static void Login() {
+        Scanner loginScanner = new Scanner(System.in);
+        System.out.print("\nPlease enter your username: \n");
+        uLog = loginScanner.nextLine();
+        System.out.print("\nPlease enter your password: \n");
+        pLog = loginScanner.nextLine();
+        System.out.print("\nWould you like to continue? (Y/N) \n");
+        YN = loginScanner.nextLine();
+
+        //closing the scanner, because EVERYONE eles forgets that --- Ben
+        loginScanner.close();
+
+
+        //testing if the usernames and passwords can get you to a seperate menu
+        //if the password is wrong, then it will send you back to the login page --- Ben
+        if(YN.equals("Y") || YN.equals("y") || YN.equals("Yes") || YN.equals("yes")){
+            if(uLog.equals(uName) && pLog.equals(pWord)){
+
+            } else {
+                System.out.println("Incorrect Username or Password.");
+                System.out.println("\n\n");
+                loginScanner = new Scanner(System.in);
+                System.out.print("\nPlease enter your username: \n");
+                uLog = loginScanner.nextLine();
+                System.out.print("\nPlease enter your password: \n");
+                pLog = loginScanner.nextLine();
+                System.out.print("\nWould you like to continue? (Y/N) \n");
+                YN = loginScanner.nextLine();
+
+        //closing the scanner, because EVERYONE eles forgets that --- Ben
+        loginScanner.close();
+            }
+        } else {
+            
+        }
+    }
+    //signing up the user (creating the users account that saves) -- Ben
     public static void Register() {
 
         //taking all of the users inputs to create an account
         Scanner signUpScanner = new Scanner(System.in);
         System.out.print("\nEnter your name: \n");
-        String rName = signUpScanner.nextLine();
+        rName = signUpScanner.nextLine();
+        System.out.println("Usernames should only contain letters. No numbers or other symbols.");
         System.out.print("\nPlease enter your username: \n");
-        String uName = signUpScanner.nextLine();
+        uName = signUpScanner.nextLine();
+        System.out.println("Passwords should only contain letters. No numbers or other symbols.");
         System.out.print("\nPlease enter your password: \n");
-        String pWord = signUpScanner.nextLine();
-        System.out.print("\nWould you like to save your information?\n");
-        String sInfo = signUpScanner.nextLine();
+        pWord = signUpScanner.nextLine();
+        System.out.print("\nWould you like to save your information? (Y/N) \n");
+        sInfo = signUpScanner.nextLine();
         
-        //seeing if your information needs to be saved
-        if(sInfo.equals("Yes")||sInfo.equals("yes")|| sInfo.equals("Y")|| sInfo.equals("y")) {
-            WriteString(s);
-        } else {
-            
-        }
 
-        
-    } 
+        // W I P W I P W I P W I P W I P W I P W I P W I P (This is placeholder code until I can save files in a proper fashion)
+        System.out.printf("\n\n\n\n\n\n\n\n\n\n\n");
+        System.out.println("Account Created . . . \nReturning to main menu");
+        Menu();
+        signUpScanner.close();
 
-    public class BufferTester {
-        public static void main(String[] args) {
-            BufferWriter.writeString("hello World");
-            BufferWriter.saveAndClose();
-    
-            //Read in the file 
-            System.out.println(BufferWriter.readString());
-    
-            
-        }
+        //saving information into  a file (WIP) --- Ben
+        //if(sInfo.equals("y") || sInfo.equals("Y") || sInfo.equals("yes")){
+            //PrintWriter out = new PrintWriter(rName +".txt");
+            //out.printf("\nName: " + rName + "\nUsername: " + uName + "\nPasssword: " + pWord);
+            //out.close();
+        //} else {
+            //System.out.println("You have chosen not to save your information, goodbye!");
+        //}
     }
 
-    public class BufferWriter {
-
-        private static Scanner in; //Scanner obj is for this file only. 
-        private static BufferedWriter out; //of this java class only
-        private static final String DATA_FILE = "PasswordManagement.txt";
-    
-        //run the code by saying BufferWriter.writeString("Print that thing out");
-        public static void writeString(String s) {
-            //if buffered writer objet is alread created,
-            //    you are accessing multiple files named the same thing
-    
-            if(out == null) {
-                //since we are going outside of the file
-                try {
-                    out = new BufferedWriter(new FileWriter(DATA_FILE));
-                } catch(Exception e) {  //Exception class is used for general error reporting. 
-                    System.err.println("Cannot open file for output!");
-                    e.printStackTrace();
+    public static void Menu() {
+        //starting a scanner 
+        Scanner ui = new Scanner(System.in);
+        //front end and navigation      --- Ben
+        System.out.println("Would you like to use Password Manager? (Y/N)");
+        userInput = ui.nextLine();
+        while(userInput.equals("y") || userInput.equals("Y") || userInput.equals("yes")) {
+            while(!userInput.equals("exit")) {
+                System.out.print("\t|~~~Password Manager~~~| \t \t \n ---------------Login or Signup--------------- \n 1.) Login \n 2.) Sign up \n 3.) Exit \n --------------------------------------------- \n");
+                System.out.println("What would you like to do?");
+                userInput = ui.nextLine();
+                if (userInput.equals("1")) {
+                   Login();
                 }
-            }
-    
-            //if you have an out object, we can now try to write the file.
-            try {
-                out.write(s);
-                out.newLine(); //adds a new line to the text file. 
-            } catch(Exception e) {
-                System.err.println("Cannot write to the file!");
-                e.printStackTrace();
-            }
-    
-        }
-    
-    
-        public static void saveAndClose() {
-            //closes after the scanner is done reading the file 
-            //saving the file
-            if(in != null) {
-                try {
-                    in.close();
-                    in=null; //resets the object to be used again later
-                } catch(Exception e) {
-                    System.err.println("Cannot close the input file!");
-                    e.printStackTrace();
-                }
-            }
-            
-            //closing the file
-            if(out != null) {
-                try {
-                    out.close();
-                    out = null; //resets the object to be used again later
-                } catch(Exception e) {
-                    System.err.println("Cannot close the output file!");
-                    e.printStackTrace();
-                }
-            }
-        }
-    
-        public static String readString() {
-            //check to see if the file is already there, if not, create it
-            //open the file(s)
-            if(in == null) {
-                try {
-                    in = new Scanner(new File(DATA_FILE));
-                } catch(Exception e) {
-                    System.err.println("Cannot open input file!");
-                    e.printStackTrace(); // prints out the error report
-                }
-            }
-    
-            //read in the values from the text file 
-            try {
-                //if there is a new line, read it in 
-                if(in.hasNext()) {  //goes up to the /n <- grabbing everything in the line. 
-                    String s = in.nextLine(); //grabs EVERYTHING all in one line 
-                    return s;
+                if (userInput.equals("2")) {
+                    System.out.print("This worked");
+                   Register();
                 } else {
-                    return null; //opened an empty file
+                    System.out.println("This did not work");
+                    break;
                 }
-            } catch(Exception e) {
-                System.err.println("Error reading the input file!");
-                e.printStackTrace(); //still printing out the error reports 
             }
-            return null;
         }
+        //closing the UI (jonah keeps messing this up lmao)
+        ui.close();
     }
 }
 
