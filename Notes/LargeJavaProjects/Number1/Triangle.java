@@ -1,29 +1,52 @@
-public abstract class Triangle extends GeometricObject{
+public class Triangle extends GeometricObject{
+     private double side1;  
+     private double side2;
+     private double side3; 
+ 
 
-    public Triangle() {
-        super("white",false);
-    }
-
-    public Triangle(String color, boolean filled) {
+     public Triangle() {
+         this.side1 = 1.0;
+         this.side2 = 1.0; 
+         this.side3 = 1.0; 
+     }
+ 
+     public Triangle(double side1, double side2, double side3) {
+         this.side1 = side1;
+         this.side2 = side2; 
+         this.side3 = side3; 
+     }
+ 
+       
+    public Triangle(double side1, double side2, double side3, String color, boolean filled) {
         super(color, filled);
+        this.side1 = side1;
+        this.side2 = side2;
+        this.side3 = side3;
     }
+ 
+     public double getSide1() {
+         return side1;
+     }
+ 
+     public double getSide2() {
+         return side2; 
+     }
+ 
+     public double getSide3() {
+         return side3;
+     }
+ 
+     @Override
+     public double getArea() {
+         double s = (side1 + side2 + side3) / 2.0;
+         //double aNum = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+         return Math.round(Math.sqrt(s * (s - side1) * (s - side2) * (s - side3)));//aNum
+     }
+ 
+     @Override
+     public double getPerimeter() {
+        double p = side1 + side2 + side3;
 
-    @Override
-    public double getArea() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getArea'");
-    }
-
-    @Override
-    public double getPerimeter() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getPerimeter'");
-    }
-
-    @Override
-    public String toString() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'toString'");
-    }
-
+         return p;
+     }
 }

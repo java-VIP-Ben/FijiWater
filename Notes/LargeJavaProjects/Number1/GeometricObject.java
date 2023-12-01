@@ -5,7 +5,7 @@ public abstract class GeometricObject {
 
   /**Default construct*/
   protected GeometricObject() {
-    
+    //I hate not having spaces
   }
 
   /**Construct a geometric object*/
@@ -40,7 +40,4 @@ public abstract class GeometricObject {
 
   /**Abstract method getPerimeter*/
   public abstract double getPerimeter();
-
-  //Abstract method to string
-  public abstract String toString(); //returns a string description for the triangle.
 }
