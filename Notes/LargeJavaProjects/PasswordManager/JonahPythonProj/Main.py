@@ -1,4 +1,4 @@
-# from PasswordManager import Password
+from PasswordManager import Password
 from Account import Account
 from User import User
 import string
@@ -227,3 +227,5 @@ while ui != "3":
     elif ui == "2":
         register()
         ui = "0"
+    }
+}

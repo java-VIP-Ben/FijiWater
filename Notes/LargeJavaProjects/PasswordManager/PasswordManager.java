@@ -1,9 +1,10 @@
 //Imports Dump (Imports are always used globally, and should be stored here)
-import java.util.Scanner;
-import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class PasswordManager {
 
@@ -12,7 +13,7 @@ public class PasswordManager {
     
     String accName;
     String category;
-    static String uLog, pLog, YN, rName, uName, pWord, sInfo, userInput, userChoice;
+    static String uLog, pLog, YN, rName, uName, pWord, sInfo, userInput, userChoice, aName, logChoice;
 
     
 
@@ -23,40 +24,59 @@ public class PasswordManager {
     }
 
     public static void Login() {
+
         Scanner loginScanner = new Scanner(System.in);
         System.out.print("\nPlease enter your username: \n");
         uLog = loginScanner.nextLine();
         System.out.print("\nPlease enter your password: \n");
         pLog = loginScanner.nextLine();
-        System.out.print("\nWould you like to continue? (Y/N) \n");
-        YN = loginScanner.nextLine();
-
-        //closing the scanner, because EVERYONE eles forgets that --- Ben
-        loginScanner.close();
-
 
         //testing if the usernames and passwords can get you to a seperate menu
         //if the password is wrong, then it will send you back to the login page --- Ben
-        if(YN.equals("Y") || YN.equals("y") || YN.equals("Yes") || YN.equals("yes")){
-            if(uLog.equals(uName) && pLog.equals(pWord)){
-
-            } else {
-                System.out.println("Incorrect Username or Password.");
-                System.out.println("\n\n");
-                loginScanner = new Scanner(System.in);
-                System.out.print("\nPlease enter your username: \n");
-                uLog = loginScanner.nextLine();
-                System.out.print("\nPlease enter your password: \n");
-                pLog = loginScanner.nextLine();
-                System.out.print("\nWould you like to continue? (Y/N) \n");
-                YN = loginScanner.nextLine();
-
-        //closing the scanner, because EVERYONE eles forgets that --- Ben
-        loginScanner.close();
+    
+            checkLogin();
+            while(!userInput.equals("3")){
+                System.out.printf("What would you like to do? : \n1.) Create a New Password \n 2.) View Passwords \n 3.) Exit\n");
+                userInput = loginScanner.nextLine();
+            if (userInput.equals("1")) {
+                    System.out.println("Enter the name of the application:");
+                aName = loginScanner.nextLine();
+                System.out.println("Enter the username for your application:");
+                uName = loginScanner.nextLine();
+                System.out.println("Enter the password for your application:");
+                pWord = loginScanner.nextLine();
+                //creating accounts for the user
+                try {
+                    FileWriter myObj = new FileWriter(aName + ".csv", true);
+                    myObj.write(aName+", " + uName + ", " + pWord + "\n");
+                    myObj.close();
+                } catch (IOException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                        
+                }
             }
-        } else {
-            
-        }
+            else if(userInput.equals("2")) {
+                System.out.println("Hitting 2");
+                try {
+                    File myObj = new File(aName + ".csv");
+                    Scanner myReader = new Scanner(myObj);
+                    while (myReader.hasNextLine()) {
+                      String data = myReader.nextLine();
+                      System.out.println(data);
+                    }
+                    myReader.close();
+                  } catch (FileNotFoundException e) {
+                    System.out.println("An error occurred.");
+                    e.printStackTrace();
+                  }
+            }
+            else if(userInput.equals("3")) {
+                System.out.println("Have fun!");
+            } else {
+                System.out.println("Please enter a valid choice");
+            }
+        }        
     }
     //signing up the user (creating the users account that saves) -- Ben
     public static void Register() {
@@ -71,8 +91,22 @@ public class PasswordManager {
         System.out.println("Passwords should only contain letters. No numbers or other symbols.");
         System.out.print("\nPlease enter your password: \n");
         pWord = signUpScanner.nextLine();
-        System.out.print("\nWould you like to save your information? (Y/N) \n");
-        sInfo = signUpScanner.nextLine();
+        
+        try {
+            //writing to a file
+            FileWriter fw = new FileWriter("login.csv", true);
+            fw.append(rName+", " + uName + ", " + pWord + "\n");
+            File myObj = new File(rName + ".csv");
+            if (myObj.createNewFile()) {
+                System.out.println("File created: " + myObj.getName());
+            } else {
+                System.out.println("File already exists.");
+            }
+            fw.close();
+        } catch (IOException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+        }
         
 
         // W I P W I P W I P W I P W I P W I P W I P W I P (This is placeholder code until I can save files in a proper fashion)
@@ -92,12 +126,10 @@ public class PasswordManager {
     }
 
     public static void Menu() {
+        userInput="";
         //starting a scanner 
         Scanner ui = new Scanner(System.in);
         //front end and navigation      --- Ben
-        System.out.println("Would you like to use Password Manager? (Y/N)");
-        userInput = ui.nextLine();
-        while(userInput.equals("y") || userInput.equals("Y") || userInput.equals("yes")) {
             while(!userInput.equals("exit")) {
                 System.out.print("\t|~~~Password Manager~~~| \t \t \n ---------------Login or Signup--------------- \n 1.) Login \n 2.) Sign up \n 3.) Exit \n --------------------------------------------- \n");
                 System.out.println("What would you like to do?");
@@ -105,17 +137,43 @@ public class PasswordManager {
                 if (userInput.equals("1")) {
                    Login();
                 }
-                if (userInput.equals("2")) {
+                else if (userInput.equals("2")) {
                     System.out.print("This worked");
                    Register();
                 } else {
-                    System.out.println("This did not work");
+                    System.out.println("Cya!");
                     break;
                 }
             }
+            ui.close();
         }
-        //closing the UI (jonah keeps messing this up lmao)
-        ui.close();
+    public static String checkLogin() {
+        //work in progress memory login --- Jonah's base code 
+        // https://www.w3schools.com/java/java_files_read.asp <- source for majority of file writing code
+        try {
+            File loginInfo = new File("login.csv");
+            try (Scanner myReader = new Scanner(loginInfo)) {
+                while (myReader.hasNextLine()) {
+                    String data = myReader.nextLine();
+                    String userName = data.substring(1, data.indexOf(","));
+                    //System.out.println(data);
+                    if(userName == uLog) {
+                        String passWord = data.substring(data.indexOf(",") + 1, data.indexOf(","));
+                        if(passWord == pWord) {
+                            return "true";
+                        }
+                    }
+                }
+                    myReader.close();
+            }
+        return "false";
+        } catch (FileNotFoundException e) {
+            System.out.println("An error occurred.");
+            e.printStackTrace();
+            return "There was an error";
+        }
     }
+
+
 }
 
