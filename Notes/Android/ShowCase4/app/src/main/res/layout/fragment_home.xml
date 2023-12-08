@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="417dp"
+        android:layout_height="108dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="1dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginBottom="265dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:background="#23AA96"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="84dp"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView"
+                    android:layout_width="315dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:padding="7dp"
+                    android:text="Showcase : Sci-Fi, MadLibs, and Number Guesser "
+                    android:textColor="#303060"
+                    android:textSize="24dp" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="412dp"
+        android:layout_height="254dp"
+        android:layout_marginTop="118dp"
+        android:layout_marginBottom="8dp"
+        android:padding="10dp"
+        android:text="Welcome! This program allows you to cycle between three games. The first is a Sci-Fi name generator, which tell you what your name would be if you were an alien! The second game is a MadLib, where you fill in different words and make a funny story at the end. The third game is a number guesser, but the number is completely random. You only get 10 tries, so good luck! Click the menu at the top left to navigate between the 3 games!"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayout2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="410dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="1dp"
+        android:layout_marginEnd="1dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="92dp"
+                android:layout_height="92dp"
+                app:srcCompat="@drawable/__22vicfdpcg21dho" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="326dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="Number Guesser : \nnumber guesser is a game that gives you 10 tries to guess a number that is randomly generated. Good luck!" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="122dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView3"
+                android:layout_width="92dp"
+                android:layout_height="138dp"
+                app:srcCompat="@drawable/__jj4d4ocqvggnz7s" />
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="\nSci-Fi Generator : \nThis game allows the user to type in names, cities, and other information to create silly names and apply them to a science fiction scenario! Try out some silly names too!" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="174dp"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/imageView4"
+                android:layout_width="92dp"
+                android:layout_height="156dp"
+                app:srcCompat="@drawable/__qaygnfmnhxtajkw" />
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="298dp"
+                android:layout_height="210dp"
+                android:layout_weight="1"
+                android:padding="5dp"
+                android:text="\n\nMadLibs : \nThis is our take on the famous mad libs game. Our madlib cycles through random stories to apply your inputs into some seriously silly stories. Give it a try!" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

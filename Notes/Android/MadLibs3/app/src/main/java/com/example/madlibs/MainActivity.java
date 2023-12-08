@@ -103,7 +103,7 @@ public class MainActivity extends AppCompatActivity {
                 madlib1.setVisibility(View.GONE);
                 madlib3.setVisibility(View.GONE);
                 madlib2.setVisibility(View.VISIBLE);
-                madlib2.setText("Ready for your first " s+ fnoun + " trip? We are going to " + fverb + " today during the " + fadj + " " + snoun + " and see who is the best at it! \n Later: \n Congrats on your " + fadverb + " " + sverb + " skills, you rocked that game! Next up we have a super fun game called " + sadj + " " + tnoun + " and the other players want their champion. Lets go!");
+                madlib2.setText("Ready for your first " + fnoun + " trip? We are going to " + fverb + " today during the " + fadj + " " + snoun + " and see who is the best at it! \n Later: \n Congrats on your " + fadverb + " " + sverb + " skills, you rocked that game! Next up we have a super fun game called " + sadj + " " + tnoun + " and the other players want their champion. Lets go!");
             }
         });
 

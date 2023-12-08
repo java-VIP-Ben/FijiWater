@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="adjective2txt" type="id" />
+    <item name="adjective3txt" type="id" />
+    <item name="noun3txt" type="id" />
+</resources>
