@@ -7,9 +7,9 @@ Errors Portion -----------------------------------------------------------------
 (Documented Errors, not the entire tutorial)
     Err No1.) Angular V2 Part 5: In the imports "@import './assets/sass/_global' needs to be './app/assets/sass/_global' instead."
     Err No2.) Angular V2, services:  Provide location of trackBy syntax within the accounts.service.ts file.
--> Solution: the trackBy code goes inside of the export class in accounts.service.ts.
+    -> Solution: the trackBy code goes inside of the export class in accounts.service.ts.
     Err No3.) (General Error) DO NOT use the --force command option for npm audit. It is probably best to shy away from this command in general. Forcing the audit updated or removed many important files regarding the angular cli and node. 
--> Solution: Uninstall angular, clear the node and npm caches (with --force this time). Then move your angular files to a new project with the cp -r command, and reinstall an angular version that corresponds with the proper version of node. 
+    -> Solution: Uninstall angular, clear the node and npm caches (with --force this time). Then move your angular files to a new project with the cp -r command, and reinstall an angular version that corresponds with the proper version of node. 
 
 
 Questions Portion -------------------------------------------------------------------------------
@@ -37,4 +37,4 @@ These questions can be pretty general, and might not have a specific location in
     Q No19.) What exactly does DOM code do?
     Q No20.) How is DOM code accessible to the users?    
     Q No21.) I want to move the input errors outside of the text boxes so the user can easily type in the ID or name without having to dodge the errors. How?
-Q No22.) What needs to be changed to set the submit button to be disabled, but still read if the *field required* errors would show?
+    Q No22.) What needs to be changed to set the submit button to be disabled, but still read if the *field required* errors would show?
