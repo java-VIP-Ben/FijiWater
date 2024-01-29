@@ -5,6 +5,7 @@ This file contains alot of the questions, errors, answers, and fixes that I came
 Errors Portion ----------------------------------------------------------------------------------
 
 (Documented Errors, not the entire tutorial)
+
     Err No1.) Angular V2 Part 5: In the imports "@import './assets/sass/_global' needs to be './app/assets/sass/_global' instead."
     Err No2.) Angular V2, services:  Provide location of trackBy syntax within the accounts.service.ts file.
     -> Solution: the trackBy code goes inside of the export class in accounts.service.ts.
