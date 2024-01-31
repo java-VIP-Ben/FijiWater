@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { AccountsComponent } from './accounts/accounts.component';
 import { AccFormComponent } from './accounts/acc-form/acc-form.component';
 import { AccountModule } from './accounts/account/account.module';
+import { EmpLoginComponent } from './emp-login/emp-login.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { AccountModule } from './accounts/account/account.module';
     LoginComponent,
     AccountsComponent,
     AccFormComponent,
+    EmpLoginComponent,
    // AuthFormComponent
   ],
   imports: [
