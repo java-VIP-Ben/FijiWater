@@ -1,1 +1,8 @@
-<p>employee works!</p>
+<div class = "body">
+    <div class = "info" *ngFor = "let emp-acc of employee; let i = index; trackBy: empService.trackByIndex(index);">
+        <app-emp-acc [emp-acc] = "emp-acc" [index] = "i"> </app-emp-acc>
+    </div>
+    <div class = "btn-container">
+        <button class = "btn" routerLink="/employee">Log Out</button>
+    </div>
+</div>

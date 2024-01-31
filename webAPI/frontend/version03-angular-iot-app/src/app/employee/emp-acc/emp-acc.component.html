@@ -1,1 +1,15 @@
-<p>emp-acc works!</p>
+<div class = "tag-container">
+    <div class = "info-msg">
+        <div class = "info-msg-text">ID : {{employee.Id}} </div>
+        <div class = "info-msg-text">Name : {{employee.Name}} </div>
+        <div class = "info-msg-text">Address : {{employee.Address}} </div>
+        <div class = "info-msg-text">City : {{employee.City}} </div>
+        <div class = "info-msg-text">State : {{employee.State}} </div>
+        <div class = "info-msg-text">Zip : {{employee.Zip}} </div>
+    </div>
+    <div class = "info-btns-container">
+        <button class = "btn delete" (click) = "deleteBtn()">Delete Account</button>
+        <button class = "btn" (click) = "updateBtn(employee.Id)">Update Info</button>
+    </div>
+</div>
+
