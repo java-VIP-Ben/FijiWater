@@ -39,3 +39,11 @@ These questions can be pretty general, and might not have a specific location in
     Q No20.) How is DOM code accessible to the users?    
     Q No21.) I want to move the input errors outside of the text boxes so the user can easily type in the ID or name without having to dodge the errors. How?
     Q No22.) What needs to be changed to set the submit button to be disabled, but still read if the *field required* errors would show?
+    Q No23.) Why are so many font families needed, especially when one is only being show for the part being displayed?
+    Q No24.) How do I get the second login (emp-login) button to show up without changing the global styling?
+    Q No25.) Is it better to reuse a page & change the data, or to create a new page to navigate to?
+    Q No26.) How do I set a default route?
+    Q No27.) How do I get the employee component to recognize the employee table in the db? 
+
+Ending ----------------------------------------------------------------------------------
+
