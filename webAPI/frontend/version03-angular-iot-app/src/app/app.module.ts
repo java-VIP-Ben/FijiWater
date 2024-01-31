@@ -13,6 +13,8 @@ import { AccountsComponent } from './accounts/accounts.component';
 import { AccFormComponent } from './accounts/acc-form/acc-form.component';
 import { AccountModule } from './accounts/account/account.module';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
+import { EmployeeComponent } from './accounts/employee/employee.component';
+import { EmpFormComponent } from './accounts/employee/emp-form/emp-form.component';
 
 
 @NgModule({
@@ -22,6 +24,8 @@ import { EmpLoginComponent } from './emp-login/emp-login.component';
     AccountsComponent,
     AccFormComponent,
     EmpLoginComponent,
+    EmployeeComponent,
+    EmpFormComponent,
    // AuthFormComponent
   ],
   imports: [
