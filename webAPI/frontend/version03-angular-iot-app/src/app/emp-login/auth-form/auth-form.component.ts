@@ -10,7 +10,7 @@ import { EmpLoginService } from '../../core/services/emp-login.service';
   templateUrl: './auth-form.component.html',
   styleUrls: ['./auth-form.component.scss']
 })
-export class AuthFormComponent implements OnInit {
+export class AuthEmpFormComponent implements OnInit {
 
     // Data Types
     emp: Employee = {

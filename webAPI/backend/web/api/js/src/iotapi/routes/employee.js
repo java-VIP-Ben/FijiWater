@@ -108,9 +108,9 @@ router.post('/update', (request, response) => {
     libiotdb.pool.query(queryString, [content.Name, content.Address, content.City, content.State, content.Zip, content.Id], (error, result, fields) => {
         if (error) {
             console.log("ERROR: " + error);
-            response.stauts(500).json(JSON.stringify(error));
+            response.status(500).json(JSON.stringify(error));
         } else {
-            response.stauts(200).json({"Id": result.insertId});
+            response.status(200).json({"Id": result.insertId});
             console.log({"Id": result.insertId});
             response.status(200).end();
 

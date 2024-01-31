@@ -11,7 +11,8 @@ const routes: Routes = [
     { path: 'home', component: AccountsComponent },
     { path: 'login', component: LoginComponent },
     { path: 'acc/:id', component: AccFormComponent },
-    { path: 'employee', component: EmpLoginComponent},
+    { path: 'employee', component: EmpLoginComponent },
+    // Add an EmpFormComponent that allows for a different employee home page
 ];
 
 @NgModule({
