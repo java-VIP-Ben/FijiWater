@@ -24,7 +24,7 @@ export class EmpLoginService {
   }
 
   getEmployeeById(id: number) {
-    return this.http.get<Employee[]>(`${this.uri}/employee/${id}`);
+    return this.http.get<Employee>(`${this.uri}/employee/${id}`);
   }
 
   addEmployee(data: Employee) {

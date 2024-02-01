@@ -10,6 +10,9 @@ import { EmpAccComponent } from './emp-acc.component';
   ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    EmpAccComponent
   ]
 })
 export class EmpAccModule { }

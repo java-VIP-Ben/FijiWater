@@ -23,7 +23,7 @@ export class EmployeeComponent implements OnInit {
 
   ngOnInit(): void {
     // We do not want all of the employee accounts to be displayed, but rather only the account of the user. 
-      this.empService.getEmployeeById(this.employee[this.index].Id).subscribe((emp: Employee[]) => {
+      this.empService.getEmployee().subscribe((emp: Employee[]) => {
             this.employee = emp;
       })
   }
@@ -33,6 +33,7 @@ export class EmployeeComponent implements OnInit {
       // pulls information out by indexing the array of employees
     this.empService.deleteEmployee(this.employee[index].Id).subscribe(() => {
         //splicing to remove
+        // this.employee.splice(index, 1);
         this.employee.splice(index, 1);
     })
   }

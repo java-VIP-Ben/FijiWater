@@ -17,7 +17,7 @@ export class EmpFormComponent implements OnInit {
     title: string;
     updateInfo: boolean = false;
 
-    newEmployee: Employee = {
+    newEmp: Employee = {
         Id: -1,
         Name: '',
         Address: '',
@@ -43,12 +43,12 @@ export class EmpFormComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-      this.newEmployee.Id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-      if(this.newEmployee.Id > -1) {
+      this.newEmp.Id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
+      if(this.newEmp.Id > -1) {
         this.title = "UPDATE INFO";
         this.updateInfo = true;
-        this.empService.getEmployeeById(this.newEmployee.Id).subscribe((employee: Employee) => {
-            this.newEmployee = employee;
+        this.empService.getEmployeeById(this.newEmp.Id).subscribe((employee: Employee) => {
+            this.newEmp = employee;
         })
       } else {
         this.title = "CREATE ACCOUNT";
@@ -58,12 +58,12 @@ export class EmpFormComponent implements OnInit {
     
   submitBtn() {
     if(this.updateInfo) {
-        this.empService.updateEmployee(this.newEmployee).subscribe(() => {
+        this.empService.updateEmployee(this.newEmp).subscribe(() => {
             this.router.navigate(['home']);
         })
     } else { 
-        delete this.newEmployee.Id;
-        this.empService.addEmployee(this.newEmployee).subscribe(() => {
+        delete this.newEmp.Id;
+        this.empService.addEmployee(this.newEmp).subscribe(() => {
             this.router.navigate(['login']);
         })
     }
