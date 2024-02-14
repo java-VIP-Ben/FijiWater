@@ -3,18 +3,20 @@
         LOGIN
     </div>
     <app-auth-form> </app-auth-form>
-    <button class = "btn" (onClick) = "DarkToggle()">Toggle Theme</button>
-    <script>
-        function DarkToggle() {
-            let element = document.body;
-            element.classList.toggle("dark");
-        }
-    </script>
-    <div class = "new-acc">
-        <div class = "new-acc-msg">
-            Don't Have an Account?
+    <div class = "tail">
+        <button class = "btn" (onClick) = "DarkToggle()">Toggle Theme</button>
+        <script>
+            function DarkToggle() {
+                let element = document.body;
+                element.classList.toggle("dark");
+            }
+        </script>
+        <div class = "new-acc">
+            <div class = "new-acc-msg">
+                Don't Have an Account?
+            </div>
+            <button class = "btn" routerLink = '/acc/-1'>Create New Account</button>
         </div>
-        <button class = "btn" routerLink = '/acc/-1'>Create New Account</button>
     </div>
 </body>
 <router-outlet></router-outlet>
