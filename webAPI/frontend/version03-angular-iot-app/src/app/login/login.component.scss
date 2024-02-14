@@ -10,25 +10,7 @@
         font-size: 27px;
         font-family: sans-serif;
         color: white;
-    }
-    .btn1 {
-        margin-top: 25px;
-        margin-bottom: 15px;
-        width: 180px;
-        height: 45px;
-        font-size: 17px;
-        background-color: rgb(150, 150, 150);
-        border-radius: 2px;
-        border: 1px solid black;
-        font-family: Arial, sans-serif;  
-        z-index: 99 !important;  
-        .dark {
-            background-color: #222;
-            color: #e6e6e6;
-        }    
-    } :hover {
-        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.397), 0px 2px 4px rgba(0, 0, 0, 0.404);
-    }
+    }    
     .new-acc {
         display: flex;
 	margin-top: 30px;
@@ -50,6 +32,10 @@
             border-radius: 2px;
             border: 1px solid black;
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            .dark {
+                background-color: #222;
+                color: #e6e6e6;
+            }
         } :hover {
             box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.397), 0px 2px 4px rgba(0, 0, 0, 0.404);
         }
