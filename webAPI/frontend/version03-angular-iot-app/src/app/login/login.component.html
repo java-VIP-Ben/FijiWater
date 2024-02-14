@@ -3,12 +3,12 @@
         LOGIN
     </div>
     <app-auth-form> </app-auth-form>
-    <button class = "btn" (onClick) = "DarkToggle()">Toggle Theme</button>
-    <script 
-        DarkToggle() {
+    <button class = "btn1" (onClick) = "DarkToggle()">Toggle Theme</button>
+    <script>
+        function DarkToggle() {
             let element = document.body;
-            element.classList.toggle(dark);
-        }>
+            element.classList.toggle("dark");
+        }
     </script>
     <div class = "new-acc">
         <div class = "new-acc-msg">

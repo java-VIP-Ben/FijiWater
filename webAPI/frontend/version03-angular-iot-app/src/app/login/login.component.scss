@@ -11,7 +11,7 @@
         font-family: sans-serif;
         color: white;
     }
-    .btn {
+    .btn1 {
         margin-top: 25px;
         margin-bottom: 15px;
         width: 180px;
@@ -20,7 +20,8 @@
         background-color: rgb(150, 150, 150);
         border-radius: 2px;
         border: 1px solid black;
-        font-family: Arial, sans-serif;    
+        font-family: Arial, sans-serif;  
+        z-index: 99 !important;  
         .dark {
             background-color: #222;
             color: #e6e6e6;
