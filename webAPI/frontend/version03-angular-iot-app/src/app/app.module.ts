@@ -15,6 +15,8 @@ import { AccountModule } from './accounts/account/account.module';
 import { EmpLoginComponent } from './emp-login/emp-login.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmpFormComponent } from './employee/emp-form/emp-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ThemeToggleComponent } from './theme-toggle/theme-toggle.component';
 
 
 @NgModule({
@@ -26,6 +28,7 @@ import { EmpFormComponent } from './employee/emp-form/emp-form.component';
     EmpLoginComponent,
     EmployeeComponent,
     EmpFormComponent,
+    ThemeToggleComponent,
    // AuthFormComponent
   ],
   imports: [
@@ -35,7 +38,8 @@ import { EmpFormComponent } from './employee/emp-form/emp-form.component';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    AccountModule
+    AccountModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
