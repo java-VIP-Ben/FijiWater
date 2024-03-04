@@ -3,13 +3,7 @@
         LOGIN
     </div>
     <app-auth-form> </app-auth-form>
-        <button class = "btn" onClick = "Test()">Dark Mode Toggle</button>
-        <script>
-            function Test() {
-                let element = document.body;
-                element.classList.toggle("dark");
-            }
-        </script>
+        <button mat-icon-button (click) = "toggleTheme()">Dark Mode Toggle</button>
         <div class = "new-acc">
             <div class = "new-acc-msg">
                 WHERE'S YOUR ACCOUNT!?
